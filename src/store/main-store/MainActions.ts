@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import { Actions } from 'vuex-smart-module';
 
 import { Todo } from '@/webservices/models/Todo';
@@ -6,7 +7,9 @@ import MainMutations from './MainMutations';
 import MainGetters from './MainGetters';
 import MainState from './MainState';
 
-import { getTodos } from '@/webservices/TodosWebservice';
+import { getTodos, removeTodo, addTodo } from '@/webservices/TodosWebservice';
+
+import i18n from '../../localization/localization';
 
 export default class MainActions extends Actions<
     MainState,
@@ -33,6 +36,44 @@ export default class MainActions extends Actions<
             this.commit('setTodos', todos);
         } catch (e) {
             console.error(e);
+        } finally {
+            this.commit('stopLoading', null);
+        }
+    }
+    public async removeTodo(id: number): Promise<void> {
+        try {
+            this.commit('startLoading', null);
+
+            await removeTodo(id);
+
+            this.dispatch('getTodos');
+
+            Vue.$toast.success(`${i18n.t('views.home.successRemove')}`, {
+                timeout: 4000,
+            });
+        } catch (e) {
+            console.error(e);
+            Vue.$toast.error(`${i18n.t('common.errors.removeTodo')}`, {
+                timeout: 4000,
+            });
+        } finally {
+            this.commit('stopLoading', null);
+        }
+    }
+    public async addTodo(todo: Todo): Promise<void> {
+        try {
+            this.commit('startLoading', null);
+
+            await addTodo(todo);
+
+            Vue.$toast.success(`${i18n.t('views.home.successAdd')}`, {
+                timeout: 4000,
+            });
+        } catch (e) {
+            console.error(e);
+            Vue.$toast.error(`${i18n.t('common.errors.addTodo')}`, {
+                timeout: 4000,
+            });
         } finally {
             this.commit('stopLoading', null);
         }

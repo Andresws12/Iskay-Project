@@ -50,6 +50,7 @@ export default class TopHeader extends Vue {}
     padding: 20px 17px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #dbdbdb;
 
     &__item {
         display: flex;

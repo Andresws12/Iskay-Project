@@ -1,15 +1,32 @@
 const en = {
     views: {
         home: {
-            title: 'home',
+            title: 'My tasks',
+            addTask: 'Add task',
+            modalName: 'Name',
+            modalDescription: 'Description',
+            modalTitle: 'Add task',
+            modalCancel: 'Cancel',
+            modalSave: 'Save',
+            successAdd: 'Added todo',
+            successRemove: 'Removed todo',
         },
     },
     common: {
-        components: {},
+        components: {
+            hedaer: {
+                data: 'My data',
+                tasks: 'My tasks',
+                returns: 'My returns',
+            },
+        },
         titles: {},
         subtitles: {},
         languages: {},
-        errors: {},
+        errors: {
+            removeTodo: 'Error removing todo',
+            addTodo: 'Error adding todo',
+        },
     },
 };
 
