@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <top-header />
         <router-view />
         <b-loading
             :is-full-page="true"
@@ -12,13 +13,17 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator';
 
-import Axios from 'axios';
-
 import mainStore from '@/store/main-store/MainStore';
+
+import TopHeader from '@/components/header/TopHeader.vue';
+
+import Axios from 'axios';
 
 @Component({
     name: 'App',
-    components: {},
+    components: {
+        TopHeader,
+    },
 })
 export default class App extends Vue {
     private mainStore = mainStore.context(this.$store);

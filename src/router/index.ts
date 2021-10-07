@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '../views/Home.vue';
-import About from '../views/About.vue';
 
 Vue.use(VueRouter);
 
@@ -21,24 +20,6 @@ const routes = [
                 {
                     property: 'og:description',
                     content: 'The home page of our Iskaypet app.',
-                },
-            ],
-        },
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: About,
-        meta: {
-            title: 'Iskaypet - About',
-            metaTags: [
-                {
-                    name: 'description',
-                    content: 'The about page of our Iskaypet app.',
-                },
-                {
-                    property: 'og:description',
-                    content: 'The about page of our Iskaypet app.',
                 },
             ],
         },
