@@ -30,7 +30,7 @@
                 alt="car"
                 class="top-header__car-icon"
             />
-            <div class="top-header__car-icon__counter">1</div>
+            <div class="top-header__car-icon__counter">2</div>
         </div>
     </div>
 </template>
