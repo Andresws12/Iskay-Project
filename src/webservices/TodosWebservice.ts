@@ -15,3 +15,11 @@ export const getTodos: (params: string) => Promise<Todo[]> = async (
     );
     return response.data;
 };
+
+export const addTodo: (todo: Todo) => Promise<void> = async todo => {
+    await axios.post(`${baseUrl}`, todo, jsonHeaders);
+};
+
+export const removeTodo: (id: number) => Promise<void> = async (id: number) => {
+    await axios.delete(`${baseUrl}/${id}`, jsonHeaders);
+};

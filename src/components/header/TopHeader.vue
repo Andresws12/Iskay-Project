@@ -1,5 +1,5 @@
 <template>
-    <div class="top-header">
+    <div class="top-header" data-cy="top-navbar">
         <div class="top-header__left top-header__item">
             <img
                 src="../../assets/img/menu.svg"
@@ -50,6 +50,7 @@ export default class TopHeader extends Vue {}
     padding: 20px 17px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #dbdbdb;
 
     &__item {
         display: flex;

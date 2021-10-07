@@ -4,11 +4,13 @@ import router from './router';
 import { store } from './store';
 import Router from 'vue-router';
 
+import 'vue-toastification/dist/index.css';
 import './styles/main.scss';
 
 import VueMq from 'vue-mq';
 import axios from 'axios';
 import Buefy from 'buefy';
+import Toast from 'vue-toastification';
 import i18n from '@/localization/localization';
 
 import vClickOutside from 'v-click-outside';
@@ -22,6 +24,9 @@ Vue.config.productionTip = false;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 Vue.use(vClickOutside);
+Vue.use(Toast, {
+    position: 'bottom-left',
+});
 
 Vue.use(Router);
 Vue.use(Buefy, {
