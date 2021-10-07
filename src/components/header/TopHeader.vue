@@ -57,6 +57,13 @@ export default class TopHeader extends Vue {}
         cursor: pointer;
     }
 
+    &__center {
+        justify-content: center;
+    }
+
+    &__logo-icon {
+        width: 85%;
+    }
     &__search-icon {
         margin-left: 24px;
     }
@@ -71,7 +78,7 @@ export default class TopHeader extends Vue {}
             color: white;
             width: 16px;
             height: 16px;
-            right: 12px;
+            right: 5px;
             top: 16px;
         }
     }
