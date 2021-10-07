@@ -3,11 +3,6 @@
         <top-header />
         <subheader />
         <router-view />
-        <b-loading
-            :is-full-page="true"
-            v-model="isLoading"
-            :can-cancel="true"
-        ></b-loading>
     </div>
 </template>
 
@@ -33,10 +28,6 @@ export default class App extends Vue {
 
     private get currentLanguage(): string {
         return this.mainStore.state.currentLanguage;
-    }
-
-    private get isLoading(): boolean {
-        return this.mainStore.state.isLoading;
     }
 
     public async created(): Promise<void> {

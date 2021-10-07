@@ -1,5 +1,5 @@
 <template>
-    <div class="top-header">
+    <div class="top-header" data-cy="top-navbar">
         <div class="top-header__left top-header__item">
             <img
                 src="../../assets/img/menu.svg"

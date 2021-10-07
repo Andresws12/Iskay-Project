@@ -2,14 +2,17 @@
     <div class="home">
         <div class="section">
             <h1 class="title">{{ $t('views.home.title') }}</h1>
-            <card-todo
-                v-for="todo in firstThreeTodos"
-                :id="todo.id"
-                :key="todo.id"
-                :title="todo.title"
-                @remove-click="onRemoveTodo"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris, ac elementum ultrices mauris. Cursus urna"
-            />
+            <b-skeleton height="80px" v-if="isLoading"></b-skeleton>
+            <div v-else>
+                <card-todo
+                    v-for="todo in firstThreeTodos"
+                    :id="todo.id"
+                    :key="todo.id"
+                    :title="todo.title"
+                    @remove-click="onRemoveTodo"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris, ac elementum ultrices mauris. Cursus urna"
+                />
+            </div>
             <b-button
                 type="is-primary"
                 class="home__add-button"
@@ -55,6 +58,9 @@ export default class Home extends Vue {
 
     private get firstThreeTodos(): Todo[] {
         return this.mainStore.getters.firstThreeTodos;
+    }
+    private get isLoading(): boolean {
+        return this.mainStore.state.isLoading;
     }
 
     private onRemoveTodo(id: number): void {
