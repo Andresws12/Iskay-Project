@@ -1,4 +1,7 @@
+import { Todo } from '@/webservices/models/Todo';
+
 export default class MainState {
-    public testData: boolean = true;
     public currentLanguage: string = 'es';
+    public isLoading: boolean = false;
+    public todos: Todo[] = [];
 }
