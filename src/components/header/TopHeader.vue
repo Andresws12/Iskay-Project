@@ -64,14 +64,15 @@ export default class TopHeader extends Vue {}
         margin-left: 24px;
         &__counter {
             background-color: $alert;
-            border-radius: 50%;
-            font-size: 10px;
-            color: white;
-            width: 14px;
-            height: 14px;
-            position: absolute;
-            right: 12px;
             text-align: center;
+            position: absolute;
+            border-radius: 50%;
+            font-size: 12px;
+            color: white;
+            width: 16px;
+            height: 16px;
+            right: 12px;
+            top: 16px;
         }
     }
 }
