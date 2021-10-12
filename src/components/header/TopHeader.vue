@@ -1,16 +1,18 @@
 <template>
-    <div class="top-header" data-cy="top-navbar">
+    <div class="top-header" data-cy="top-header">
         <div class="top-header__left top-header__item">
             <img
                 src="../../assets/img/menu.svg"
                 alt="Menu"
                 class="top-header__menu-icon"
                 @click="toggleLeftMenu"
+                data-cy="top-header-menu-icon"
             />
             <img
                 src="../../assets/img/search.svg"
                 alt="Search"
                 class="top-header__search-icon"
+                data-cy="top-header-search-icon"
             />
         </div>
         <div class="top-header__center top-header__item">
@@ -18,6 +20,7 @@
                 src="../../assets/img/logo.svg"
                 alt="logo"
                 class="top-header__logo-icon"
+                data-cy="top-header-logo-icon"
             />
         </div>
         <div class="top-header__right top-header__item">
@@ -25,14 +28,21 @@
                 src="../../assets/img/login.svg"
                 alt="login"
                 class="top-header__login-icon"
+                data-cy="top-header-login-icon"
             />
             <img
                 src="../../assets/img/car.svg"
                 alt="car"
                 class="top-header__car-icon"
                 @click="sumCounter"
+                data-cy="top-header-car-icon"
             />
-            <div class="top-header__car-icon__counter">{{ counterNumer }}</div>
+            <div
+                class="top-header__car-icon__counter"
+                data-cy="top-header-counter-icon"
+            >
+                {{ counterNumer }}
+            </div>
         </div>
     </div>
 </template>

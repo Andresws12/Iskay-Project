@@ -1,5 +1,5 @@
 <template>
-    <div class="personal-data">
+    <div class="personal-data" data-cy="personal-data">
         <div class="section">
             <h1 class="title">{{ $t('common.titles.personalData') }}</h1>
         </div>

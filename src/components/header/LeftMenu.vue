@@ -4,17 +4,26 @@
             v-if="isShowLeftMenu"
             class="left-menu"
             v-click-outside="closeLeftMenu"
+            data-cy="left-menu"
         >
             <img
                 src="../../assets/img/times-solid.svg"
                 class="left-menu__close-menu-icon"
                 @click="closeLeftMenu"
                 alt="close-left-menu"
+                data-cy="left-menu-close-icon"
             />
             <div class="left-menu__logo">
-                <img src="../../assets/img/logo.svg" alt="logo" />
+                <img
+                    src="../../assets/img/logo.svg"
+                    alt="logo"
+                    data-cy="left-menu-logo"
+                />
             </div>
-            <b-menu class="left-menu__translation-menu">
+            <b-menu
+                class="left-menu__translation-menu"
+                data-cy="left-menu-translation-menu"
+            >
                 <b-menu-list :label="$t('common.languages.title')">
                     <b-menu-item :label="currentLanguage.toUpperCase()">
                         <b-menu-item

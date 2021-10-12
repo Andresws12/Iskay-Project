@@ -1,18 +1,21 @@
 <template>
-    <div class="subheader">
+    <div class="subheader" data-cy="subheader">
         <subheader-item
             :label="$t('common.titles.personalData')"
             :isActive="this.$route.name === 'MyData'"
+            data-cy="subheader-my-data-link"
             nameToGo="MyData"
         />
         <subheader-item
             :label="$t('common.titles.tasks')"
             :isActive="this.$route.name === 'Home'"
+            data-cy="subheader-my-tasks-link"
             nameToGo="Home"
         />
         <subheader-item
             :label="$t('common.titles.personalReturns')"
             :isActive="this.$route.name === 'MyReturns'"
+            data-cy="subheader-my-returns-link"
             nameToGo="MyReturns"
         />
     </div>

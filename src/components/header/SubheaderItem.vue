@@ -5,10 +5,15 @@
             :class="{
                 'subheader-item__text--active': isActive,
             }"
+            data-cy="subheader-item-label"
         >
             {{ label }}
         </p>
-        <div v-if="isActive" class="subheader-item__bar-active"></div>
+        <div
+            v-if="isActive"
+            class="subheader-item__bar-active"
+            data-cy="subheader-item-bar-active"
+        ></div>
     </div>
 </template>
 

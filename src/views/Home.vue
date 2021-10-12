@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home" data-cy="tasks">
         <div class="section">
             <h1 class="title">{{ $t('common.titles.tasks') }}</h1>
             <b-skeleton height="80px" v-if="isLoading"></b-skeleton>
