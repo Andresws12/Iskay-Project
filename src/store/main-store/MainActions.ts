@@ -33,7 +33,7 @@ export default class MainActions extends Actions<
 
             const todos: Todo[] = await getTodos(this.getters.query);
 
-            this.commit('setTodos', todos);
+            this.commit('setTodos', todos.slice(0, 3));
         } catch (e) {
             console.error(e);
         } finally {
@@ -46,7 +46,7 @@ export default class MainActions extends Actions<
 
             await removeTodo(id);
 
-            this.dispatch('getTodos');
+            this.commit('removeTodo', id);
 
             Vue.$toast.success(`${i18n.t('views.home.successRemove')}`, {
                 timeout: 4000,
@@ -65,6 +65,8 @@ export default class MainActions extends Actions<
             this.commit('startLoading', null);
 
             await addTodo(todo);
+
+            this.commit('addTodo', todo);
 
             Vue.$toast.success(`${i18n.t('views.home.successAdd')}`, {
                 timeout: 4000,

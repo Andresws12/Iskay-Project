@@ -27,4 +27,13 @@ export default class MainMutations extends Mutations<MainState> {
     public setTodos(todos: Todo[]): void {
         this.state.todos = todos;
     }
+    public removeTodo(id: number): void {
+        this.state.todos.splice(
+            this.state.todos.findIndex(todo => todo.id === id),
+            1
+        );
+    }
+    public addTodo(todo: Todo): void {
+        this.state.todos.push(todo);
+    }
 }

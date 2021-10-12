@@ -5,7 +5,7 @@
             <b-skeleton height="80px" v-if="isLoading"></b-skeleton>
             <div v-else>
                 <card-todo
-                    v-for="todo in firstThreeTodos"
+                    v-for="todo in todos"
                     :id="todo.id"
                     :key="todo.id"
                     :title="todo.title"
@@ -56,8 +56,8 @@ export default class Home extends Vue {
 
     private showModal: boolean = false;
 
-    private get firstThreeTodos(): Todo[] {
-        return this.mainStore.getters.firstThreeTodos;
+    private get todos(): Todo[] {
+        return this.mainStore.state.todos;
     }
     private get isLoading(): boolean {
         return this.mainStore.state.isLoading;
