@@ -1,0 +1,16 @@
+.slide-fade-inverted-enter-active {
+    transition: all 0.3s ease;
+}
+
+.slide-fade-inverted-leave-active {
+    transform: translateX(0.65rem);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+.slide-fade-inverted-enter {
+    transform: translateX(-0.65rem);
+    opacity: 0;
+}
+.slide-fade-inverted-leave-to {
+    opacity: 0;
+}

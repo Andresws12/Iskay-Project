@@ -1,0 +1,17 @@
+.slide-fade-menu-enter-active {
+    transition: all 0.3s ease;
+}
+
+.slide-fade-menu-leave-active {
+    transform: translateX(-18.75rem);
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+.slide-fade-menu-enter {
+    transform: translateX(-18.75rem);
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+.slide-fade-menu-leave-to {
+    opacity: 0;
+}

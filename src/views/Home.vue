@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="section">
-            <h1 class="title">{{ $t('views.home.title') }}</h1>
+            <h1 class="title">{{ $t('common.titles.tasks') }}</h1>
             <b-skeleton height="80px" v-if="isLoading"></b-skeleton>
             <div v-else>
                 <card-todo

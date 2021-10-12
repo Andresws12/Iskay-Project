@@ -80,4 +80,12 @@ export default class MainActions extends Actions<
             this.commit('stopLoading', null);
         }
     }
+
+    // Left Menu
+    public showLeftMenu(): void {
+        this.commit('showLeftMenu');
+    }
+    public hideLeftMenu(): void {
+        this.commit('hideLeftMenu');
+    }
 }

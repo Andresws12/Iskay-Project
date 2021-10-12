@@ -1,5 +1,5 @@
 <template>
-    <div class="subheader-item">
+    <div class="subheader-item" @click="goTo">
         <p
             class="subheader-item__text"
             :class="{
@@ -19,10 +19,18 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
     name: 'SubheaderItem',
 })
 export default class SubheaderItem extends Vue {
-    @Prop([String, Object]) private to: string | any;
+    @Prop([String, Object]) private nameToGo: string | any;
     @Prop(Boolean) private isActive: boolean;
     @Prop(String) private label: string;
     @Prop(String) private path: string;
+
+    private goTo(): void {
+        this.nameToGo
+            ? this.nameToGo !== this.$router.currentRoute.name
+                ? this.$router.push({ name: this.nameToGo })
+                : null
+            : null;
+    }
 }
 </script>
 

@@ -5,6 +5,7 @@
                 src="../../assets/img/menu.svg"
                 alt="Menu"
                 class="top-header__menu-icon"
+                @click="toggleLeftMenu"
             />
             <img
                 src="../../assets/img/search.svg"
@@ -38,10 +39,24 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
+import mainStore from '@/store/main-store/MainStore';
+
 @Component({
     name: 'TopHeader',
 })
-export default class TopHeader extends Vue {}
+export default class TopHeader extends Vue {
+    private mainStore = mainStore.context(this.$store);
+
+    private get isShowLeftMenu(): boolean {
+        return this.mainStore.state.isShowLeftMenu;
+    }
+
+    private toggleLeftMenu(): void {
+        this.isShowLeftMenu
+            ? this.mainStore.actions.hideLeftMenu()
+            : this.mainStore.actions.showLeftMenu();
+    }
+}
 </script>
 
 <style lang="scss" scoped>

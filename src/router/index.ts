@@ -2,6 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '../views/Home.vue';
+import PersonalData from '../views/PersonalData.vue';
+import PersonalReturns from '../views/PersonalReturns.vue';
 
 Vue.use(VueRouter);
 
@@ -20,6 +22,42 @@ const routes = [
                 {
                     property: 'og:description',
                     content: 'The home page of our Iskaypet app.',
+                },
+            ],
+        },
+    },
+    {
+        path: '/',
+        name: 'MyData',
+        component: PersonalData,
+        meta: {
+            title: 'Iskaypet - My data',
+            metaTags: [
+                {
+                    name: 'description',
+                    content: 'The my data page of our Iskaypet app.',
+                },
+                {
+                    property: 'og:description',
+                    content: 'The my data page of our Iskaypet app.',
+                },
+            ],
+        },
+    },
+    {
+        path: '/',
+        name: 'MyReturns',
+        component: PersonalReturns,
+        meta: {
+            title: 'Iskaypet - My returns',
+            metaTags: [
+                {
+                    name: 'description',
+                    content: 'The my returns page of our Iskaypet app.',
+                },
+                {
+                    property: 'og:description',
+                    content: 'The my returns page of our Iskaypet app.',
                 },
             ],
         },

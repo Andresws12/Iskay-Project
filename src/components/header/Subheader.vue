@@ -1,11 +1,20 @@
 <template>
     <div class="subheader">
-        <subheader-item :label="$t('common.components.hedaer.data')" />
         <subheader-item
-            :label="$t('common.components.hedaer.tasks')"
-            isActive
+            :label="$t('common.titles.personalData')"
+            :isActive="this.$route.name === 'MyData'"
+            nameToGo="MyData"
         />
-        <subheader-item :label="$t('common.components.hedaer.returns')" />
+        <subheader-item
+            :label="$t('common.titles.tasks')"
+            :isActive="this.$route.name === 'Home'"
+            nameToGo="Home"
+        />
+        <subheader-item
+            :label="$t('common.titles.personalReturns')"
+            :isActive="this.$route.name === 'MyReturns'"
+            nameToGo="MyReturns"
+        />
     </div>
 </template>
 

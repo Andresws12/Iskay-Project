@@ -36,4 +36,12 @@ export default class MainMutations extends Mutations<MainState> {
     public addTodo(todo: Todo): void {
         this.state.todos.push(todo);
     }
+
+    // Left Menu
+    public showLeftMenu(): void {
+        this.state.isShowLeftMenu = true;
+    }
+    public hideLeftMenu(): void {
+        this.state.isShowLeftMenu = false;
+    }
 }

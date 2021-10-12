@@ -1,7 +1,6 @@
 const es = {
     views: {
         home: {
-            title: 'Mis tareas',
             addTask: 'Añadir tarea',
             modalName: 'Nombre',
             modalDescription: 'Descripción',
@@ -13,16 +12,14 @@ const es = {
         },
     },
     common: {
-        components: {
-            hedaer: {
-                data: 'Mis datos',
-                tasks: 'Mis tareas',
-                returns: 'Mis devoluciones',
-            },
+        titles: {
+            tasks: 'Mis tareas',
+            personalData: 'Mis Datos',
+            personalReturns: 'Mis devoluciones',
         },
-        titles: {},
-        subtitles: {},
-        languages: {},
+        languages: {
+            title: 'Idioma',
+        },
         errors: {
             removeTodo: 'Error borrando el todo',
             addTodo: 'Error aádiendoe l todo',
