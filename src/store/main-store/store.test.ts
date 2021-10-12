@@ -6,7 +6,7 @@ import MainActions from './MainActions';
 
 import MainStore from './MainStore';
 
-it('increments asynchronously', async () => {
+it('Translation functionality', async () => {
     const localVue = createLocalVue();
     localVue.use(Vuex);
 
