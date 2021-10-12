@@ -30,8 +30,9 @@
                 src="../../assets/img/car.svg"
                 alt="car"
                 class="top-header__car-icon"
+                @click="sumCounter"
             />
-            <div class="top-header__car-icon__counter">2</div>
+            <div class="top-header__car-icon__counter">{{ counterNumer }}</div>
         </div>
     </div>
 </template>
@@ -46,6 +47,12 @@ import mainStore from '@/store/main-store/MainStore';
 })
 export default class TopHeader extends Vue {
     private mainStore = mainStore.context(this.$store);
+
+    private counterNumer: number = 0;
+
+    private sumCounter(): void {
+        this.counterNumer++;
+    }
 
     private get isShowLeftMenu(): boolean {
         return this.mainStore.state.isShowLeftMenu;
@@ -90,7 +97,7 @@ export default class TopHeader extends Vue {
             text-align: center;
             position: absolute;
             border-radius: 50%;
-            font-size: 12px;
+            font-size: 10px;
             color: white;
             width: 16px;
             height: 16px;
