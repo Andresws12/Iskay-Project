@@ -6,6 +6,7 @@
         <transition name="slide-fade-inverted" mode="out-in">
             <router-view />
         </transition>
+        <GithubButton />
     </div>
 </template>
 
@@ -17,6 +18,7 @@ import mainStore from '@/store/main-store/MainStore';
 import TopHeader from '@/components/header/TopHeader.vue';
 import Subheader from '@/components/header/Subheader.vue';
 import LeftMenu from '@/components/header/LeftMenu.vue';
+import GithubButton from '@/components/GithubButton.vue';
 
 import Axios from 'axios';
 
@@ -26,6 +28,7 @@ import Axios from 'axios';
         TopHeader,
         Subheader,
         LeftMenu,
+        GithubButton,
     },
 })
 export default class App extends Vue {
